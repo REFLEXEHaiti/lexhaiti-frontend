@@ -88,7 +88,7 @@ export default function PageConnexion() {
           <p style={{ fontFamily: "'Helvetica Neue',Arial,sans-serif", fontSize: 12, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.12em', textTransform: 'uppercase', margin: '0 0 36px' }}>
             {config?.sloganCourt ?? 'DROIT & AVOCATURE'}
           </p>
-          <div style={{ width: '100%', max: 480 }}>
+          <div style={{ width: '100%', maxWidth: 480 }}>
             <div style={{ height: 1, background: `linear-gradient(90deg, transparent, ${secondaire}, transparent)`, marginBottom: 32 }} />
           </div>
 
