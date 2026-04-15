@@ -1,1 +1,21 @@
-{}
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/auth/connexion/page": "app/auth/connexion/page.js",
+  "/auth/inscription/page": "app/auth/inscription/page.js",
+  "/auth/mot-de-passe-oublie/page": "app/auth/mot-de-passe-oublie/page.js",
+  "/bibliotheque/page": "app/bibliotheque/page.js",
+  "/classement/page": "app/classement/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/debats/[id]/page": "app/debats/[id]/page.js",
+  "/debats/page": "app/debats/page.js",
+  "/formations/[id]/page": "app/formations/[id]/page.js",
+  "/formations/page": "app/formations/page.js",
+  "/lives/page": "app/lives/page.js",
+  "/page": "app/page.js",
+  "/premium/page": "app/premium/page.js",
+  "/profil/[id]/page": "app/profil/[id]/page.js",
+  "/profil/modifier/page": "app/profil/modifier/page.js",
+  "/tournois/[id]/page": "app/tournois/[id]/page.js",
+  "/tournois/page": "app/tournois/page.js"
+}

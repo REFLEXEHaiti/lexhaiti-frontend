@@ -3,29 +3,17 @@
   "middleware": {
     "/": {
       "files": [
-        "server/edge/chunks/0wfu_next_dist_0m1ikx_._.js",
+        "server/edge/chunks/0wfu_next_dist_0cy41cm._.js",
         "server/edge/chunks/[root-of-the-server]__0tb.9to._.js",
-        "server/edge/chunks/0vfs_next_dist_esm_build_templates_edge-wrapper_01z6za0.js"
+        "server/edge/chunks/0vfs_next_dist_esm_build_templates_edge-wrapper_0hpwhq8.js"
       ],
       "name": "middleware",
       "page": "/",
-      "entrypoint": "server/edge/chunks/0vfs_next_dist_esm_build_templates_edge-wrapper_01z6za0.js",
+      "entrypoint": "server/edge/chunks/0vfs_next_dist_esm_build_templates_edge-wrapper_0hpwhq8.js",
       "matchers": [
         {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/dashboard(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
-          "originalSource": "/dashboard/:path*"
-        },
-        {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/admin(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
-          "originalSource": "/admin/:path*"
-        },
-        {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/paiement(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
-          "originalSource": "/paiement/:path*"
-        },
-        {
-          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/profil(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(\\\\.json)?[\\/#\\?]?$",
-          "originalSource": "/profil/:path*"
+          "regexp": "^/.*$",
+          "originalSource": "/:path*"
         }
       ],
       "wasm": [],
@@ -33,9 +21,9 @@
       "env": {
         "__NEXT_BUILD_ID": "development",
         "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "GSENSYfntkLADH6vSx/5ttkBahwUt+Eq5heW6U3GvBk=",
-        "__NEXT_PREVIEW_MODE_ID": "20aec41d953e772a8275af0773131341",
-        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "5700f67da0469a1b6e4943f7b13077eda96f94ee49b652493151f3ddeeaee1d5",
-        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "b5454bd0deae2733baada9abd7ec079e27c1add25095fd9f10f65fa1646ac22c"
+        "__NEXT_PREVIEW_MODE_ID": "56a8a4accebfb343c1a2fc794902ad41",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "dff1c8ab20d511de21892239596561c42b4708e637bc4c74c879b7d85d463ad6",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "786aa846eb4f510ce45a23029c21ef50bdce3372d2d9a25adbcd1479717810a3"
       }
     }
   },

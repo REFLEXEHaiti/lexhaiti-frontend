@@ -1,94 +1,62 @@
-/* app/globals.css */
-/* ✅ COMMUN AUX 3 PLATEFORMES */
-/* Les variables --tenant-* sont injectées dynamiquement par TenantProvider */
+/* app/globals.css — TechPro Haiti */
+/* Style Online School : navy foncé, orange vif, typographie très bold */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ═══════════════════════════════════════════════════
-   IDEA HAITI — DESIGN SYSTEM
-   Variables de base + Variables tenant dynamiques
-   Polices : Georgia (titres) + Helvetica Neue (UI)
-═══════════════════════════════════════════════════ */
-
 :root {
-  /* Palette neutre commune */
-  --ink:    #111418;
-  --ink2:   #1E2530;
-  --page:   #F8FAFC;
-  --page2:  #F1F5F9;
-  --line:   rgba(17,20,24,0.08);
-  --line2:  rgba(17,20,24,0.16);
-  --muted:  rgba(17,20,24,0.44);
+  --navy:        #1B3A6B;
+  --navy-dark:   #0D1F3C;
+  --navy-deeper: #081428;
+  --orange:      #FF6B35;
+  --orange-pale: #FFF0EA;
+  --bleu-clair:  #3B82F6;
+  --jaune:       #FFD700;
+  --gris:        #64748B;
+  --gris-clair:  #F1F5F9;
+  --bordure:     #E2E8F0;
+  --texte:       #0D1F2D;
+  --blanc:       #FFFFFF;
 
-  /* Variables tenant — initialisées avec des valeurs neutres */
-  /* Elles seront écrasées dynamiquement par TenantProvider */
   --tenant-primaire:   #1B3A6B;
   --tenant-secondaire: #FF6B35;
-  --tenant-accent:     #EBF3FB;
-  --tenant-texte:      #0D1B2A;
+  --tenant-accent:     #FFF0EA;
 
-  --nav-h: 56px;
+  --nav-h: 64px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink:   #EDE8DF;
-    --ink2:  #C4BDAF;
-    --page:  #0E1117;
-    --page2: #161B24;
-    --line:  rgba(237,232,223,0.07);
-    --line2: rgba(237,232,223,0.15);
-    --muted: rgba(237,232,223,0.40);
-  }
-}
-
-/* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0; padding: 0;
-  background: var(--page);
-  color: var(--ink);
-  font-family: Georgia, 'Times New Roman', serif;
+  background: #F8FAFB;
+  color: var(--texte);
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  line-height: 1.6;
 }
-h1,h2,h3,h4 { font-family: Georgia,serif; font-weight: normal; letter-spacing: -0.015em; margin: 0; }
+h1, h2, h3, h4 {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin: 0;
+  line-height: 1.1;
+}
 p { margin: 0; }
-a { color: inherit; }
 
-/* ── Navbar responsive ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 2px; }
+
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+
 @media (max-width: 768px) {
   .idea-nav-links { display: none !important; }
   .idea-burger    { display: flex !important; }
 }
 
-/* ── Grille formulaire 2 colonnes → 1 sur mobile ── */
-@media (max-width: 480px) {
-  .idea-two-col { grid-template-columns: 1fr !important; }
-}
-
-/* ── Scrollbar fine ── */
-::-webkit-scrollbar { width: 4px; height: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--line2); border-radius: 2px; }
-
-/* ── Sélection de texte avec couleur tenant ── */
-::selection {
-  background: var(--tenant-primaire);
-  color: white;
-  opacity: 0.9;
-}
-
-/* ── Focus visible accessible ── */
-:focus-visible {
-  outline: 2px solid var(--tenant-primaire);
-  outline-offset: 2px;
-}
-
-/* ── Transitions globales ── */
-button, a { transition: opacity 0.15s; }
-button:hover, a:hover { opacity: 0.85; }
+::selection { background: var(--orange); color: white; }
+button, a { transition: opacity 0.15s, transform 0.15s; }
 button:disabled { opacity: 0.5; cursor: not-allowed; }

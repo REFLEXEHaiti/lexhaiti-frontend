@@ -1,6 +1,34 @@
 {
   "pages": {
-    "/_app": []
+    "/_app": [
+      "static/chunks/0wfu_next_dist_compiled_10x5cam._.js",
+      "static/chunks/0wfu_next_dist_shared_lib_0p.2-a3._.js",
+      "static/chunks/0wfu_next_dist_client_0o97n4-._.js",
+      "static/chunks/0wfu_next_dist_06yogz9._.js",
+      "static/chunks/0wfu_next_app_02jxv1f.js",
+      "static/chunks/[next]_entry_page-loader_ts_00yp~l_._.js",
+      "static/chunks/0wfu_react_0szqd4y._.js",
+      "static/chunks/0wfu_react-dom_cjs_react-dom_development_0nx~_mx.js",
+      "static/chunks/0wfu_react-dom_07l3971._.js",
+      "static/chunks/0wfu_08nl0en._.js",
+      "static/chunks/[root-of-the-server]__0_lhwhp._.js",
+      "static/chunks/IDEA-Haiti_lexhaiti-frontend_pages__app_07xvfw~._.js",
+      "static/chunks/turbopack-IDEA-Haiti_lexhaiti-frontend_pages__app_0iwwfvv._.js"
+    ],
+    "/_error": [
+      "static/chunks/0wfu_next_dist_compiled_10x5cam._.js",
+      "static/chunks/0wfu_next_dist_shared_lib_05hg__a._.js",
+      "static/chunks/0wfu_next_dist_client_0o97n4-._.js",
+      "static/chunks/0wfu_next_dist_0wrs6qr._.js",
+      "static/chunks/[next]_entry_page-loader_ts_0ncy98i._.js",
+      "static/chunks/0wfu_react_0szqd4y._.js",
+      "static/chunks/0wfu_react-dom_cjs_react-dom_development_0nx~_mx.js",
+      "static/chunks/0wfu_react-dom_07l3971._.js",
+      "static/chunks/0wfu_08nl0en._.js",
+      "static/chunks/[root-of-the-server]__120spb-._.js",
+      "static/chunks/IDEA-Haiti_lexhaiti-frontend_pages__error_07xvfw~._.js",
+      "static/chunks/turbopack-IDEA-Haiti_lexhaiti-frontend_pages__error_0hgziao._.js"
+    ]
   },
   "devFiles": [],
   "polyfillFiles": [],

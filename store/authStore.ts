@@ -1,10 +1,3 @@
-// store/authStore.ts
-// ═══════════════════════════════════════════════════════════════
-// IDEA Haiti — Store Zustand authentification
-// Commun aux 3 plateformes
-// Inclut maintenant tenantId et tenantSlug dans l'utilisateur
-// ═══════════════════════════════════════════════════════════════
-
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { sauvegarderSession, supprimerSession } from '@/lib/auth';
@@ -16,7 +9,7 @@ export interface Utilisateur {
   nom: string;
   role: 'ADMIN' | 'FORMATEUR' | 'APPRENANT' | 'SPECTATEUR';
   tenantId: string;
-  tenant: string; // slug: "lex" | "techpro" | "mediform"
+  tenant: string;
 }
 
 interface AuthStore {
@@ -50,7 +43,7 @@ export const useAuthStore = create<AuthStore>()(
       },
     }),
     {
-      name: 'idea-auth-storage', // clé différente de Debat Haiti pour éviter les conflits
+      name: 'idea-auth-storage',
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         utilisateur: state.utilisateur,
@@ -58,7 +51,10 @@ export const useAuthStore = create<AuthStore>()(
         estConnecte: state.estConnecte,
       }),
       onRehydrateStorage: () => (state) => {
-        state?.setHasHydrated(true);
+        // Appelé quand la réhydratation est terminée
+        if (state) {
+          state.setHasHydrated(true);
+        }
       },
     }
   )

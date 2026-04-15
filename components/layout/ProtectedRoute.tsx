@@ -1,11 +1,6 @@
-// components/layout/ProtectedRoute.tsx
-// ✅ COMMUN AUX 3 PLATEFORMES
-// Wrapper pour protéger les composants côté client
-// Le middleware Next.js protège côté serveur (middleware.ts)
-
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/store/authStore';
 
@@ -15,21 +10,28 @@ interface Props {
 }
 
 export default function ProtectedRoute({ children, rolesAutorises }: Props) {
-  const { estConnecte, utilisateur, _hasHydrated } = useAuthStore();
+  const { estConnecte, utilisateur } = useAuthStore();
   const router = useRouter();
+  const [pret, setPret] = useState(false);
 
   useEffect(() => {
-    if (!_hasHydrated) return;
+    // Attendre 150ms — laisse Zustand persist terminer la réhydratation depuis localStorage
+    const t = setTimeout(() => setPret(true), 150);
+    return () => clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    if (!pret) return;
     if (!estConnecte) {
-      router.push('/auth/connexion');
+      router.replace('/auth/connexion');
       return;
     }
     if (rolesAutorises && utilisateur && !rolesAutorises.includes(utilisateur.role)) {
-      router.push('/dashboard');
+      router.replace('/dashboard');
     }
-  }, [_hasHydrated, estConnecte, utilisateur, rolesAutorises, router]);
+  }, [pret, estConnecte, utilisateur]);
 
-  if (!_hasHydrated || !estConnecte) {
+  if (!pret) {
     return (
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '60vh' }}>
         <div style={{ fontFamily: "'Helvetica Neue',Arial,sans-serif", color: '#64748B', fontSize: 14 }}>
@@ -38,6 +40,9 @@ export default function ProtectedRoute({ children, rolesAutorises }: Props) {
       </div>
     );
   }
+
+  if (!estConnecte) return null;
+  if (rolesAutorises && utilisateur && !rolesAutorises.includes(utilisateur.role)) return null;
 
   return <>{children}</>;
 }

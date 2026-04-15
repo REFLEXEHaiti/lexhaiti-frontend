@@ -1,6 +1,4 @@
 // hooks/useNotifications.ts
-// Commun aux 3 plateformes — les notifications sont isolées par tenant côté backend
-
 import { useState, useEffect } from 'react';
 import api from '@/lib/api';
 import { useAuthStore } from '@/store/authStore';
@@ -8,7 +6,7 @@ import { useAuthStore } from '@/store/authStore';
 export function useNotifications() {
   const [notifications, setNotifications] = useState<any[]>([]);
   const [nonLues, setNonLues] = useState(0);
-  const { estConnecte } = useAuthStore();
+  const { estConnecte, token, _hasHydrated } = useAuthStore();
 
   const chargerNotifications = async () => {
     try {
@@ -33,12 +31,12 @@ export function useNotifications() {
   };
 
   useEffect(() => {
-    if (!estConnecte) return;
+    if (!_hasHydrated || !estConnecte || !token) return;
     chargerNotifications();
     chargerNonLues();
     const interval = setInterval(chargerNonLues, 30000);
     return () => clearInterval(interval);
-  }, [estConnecte]);
+  }, [_hasHydrated, estConnecte, token]);
 
   return { notifications, nonLues, marquerToutesLues, chargerNotifications };
 }
