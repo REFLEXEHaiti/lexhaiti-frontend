@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/IDEA-Haiti/lexhaiti-frontend/middleware.ts"],"sourcesContent":["export function middleware() {}\r\nexport const config = { matcher: [] };"],"names":["middleware","config","matcher"],"mappings":";;;;;;AAAO,SAASA,cAAc;AACvB,MAAMC,SAAS;IAAEC,SAAS,EAAE;AAAC"}}]
-}
